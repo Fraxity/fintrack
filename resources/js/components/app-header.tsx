@@ -1,5 +1,15 @@
 import { Link, usePage } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-react';
+import {
+    BookOpen,
+    Folder,
+    LayoutGrid,
+    Menu,
+    PiggyBank,
+    ReceiptText,
+    Search,
+    Tags,
+    Wallet,
+} from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import AppLogoIcon from '@/components/app-logo-icon';
 import { Breadcrumbs } from '@/components/breadcrumbs';
@@ -33,6 +43,10 @@ import { useCurrentUrl } from '@/hooks/use-current-url';
 import { useInitials } from '@/hooks/use-initials';
 import { cn, toUrl } from '@/lib/utils';
 import { dashboard } from '@/routes';
+import { index as budgetsIndex } from '@/routes/budgets';
+import { index as categoriesIndex } from '@/routes/categories';
+import { index as expensesIndex } from '@/routes/expenses';
+import { index as incomesIndex } from '@/routes/incomes';
 import type { BreadcrumbItem, NavItem } from '@/types';
 
 type Props = {
@@ -44,6 +58,26 @@ const mainNavItems: NavItem[] = [
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
+    },
+    {
+        title: 'Expenses',
+        href: expensesIndex(),
+        icon: ReceiptText,
+    },
+    {
+        title: 'Income',
+        href: incomesIndex(),
+        icon: Wallet,
+    },
+    {
+        title: 'Budgets',
+        href: budgetsIndex(),
+        icon: PiggyBank,
+    },
+    {
+        title: 'Categories',
+        href: categoriesIndex(),
+        icon: Tags,
     },
 ];
 
